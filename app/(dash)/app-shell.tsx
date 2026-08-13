@@ -82,10 +82,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
         <div className="side-foot">
           <div className="user">
-            <div className="user__avatar" aria-hidden="true">SH</div>
+            {/* Ghi cứng cho tới khi có màn tài khoản thật — đọc tên/email từ
+                phiên đăng nhập là việc của phase sau, không thuộc bài test. */}
+            <div className="user__avatar" aria-hidden="true">NS</div>
             <div className="user__text">
-              <div className="user__name">Sang Hồ Đăng</div>
-              <div className="user__mail">sangho.victor@gmail.com</div>
+              <div className="user__name">Nhân sự nội dung</div>
+              <div className="user__mail">seed@aicontent.local</div>
             </div>
             <button className="icon-btn" type="button" aria-label="Tuỳ chọn tài khoản"><Icon name="i-dots" size={18} /></button>
           </div>
