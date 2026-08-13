@@ -140,11 +140,13 @@ trong `lib/model-runner/index.js` — hàm đó đẩy việc vào hàng đợi 
 
 ## 6. Cách nộp
 
-1. Fork repo này về tài khoản của bạn, để **private**
+1. Bấm **"Use this template" → Create a new repository** ở đầu trang repo này,
+   đặt ở chế độ **Private**. Đừng fork — fork của repo private không tách khỏi
+   repo gốc, bạn sẽ vướng quyền khi đẩy code.
 2. Commit theo từng mốc, đừng dồn một commit cuối — chúng tôi đọc lịch sử commit
 3. Thêm một tệp `GHI-CHU.md` ở gốc: làm được tới mốc mấy, chỗ nào bỏ dở và vì
    sao, quyết định nào bạn phân vân
-4. Mời `sangho.victor@gmail.com` vào repo
+4. Mời tài khoản GitHub **`SaLyTV`** vào repo của bạn (Settings → Collaborators)
 5. Quay video ≤10 phút: demo chạy thật + giải thích **một** quyết định kỹ thuật
    khó nhất bạn gặp và vì sao chọn hướng đó
 
