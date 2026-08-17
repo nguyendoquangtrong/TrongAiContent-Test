@@ -9,7 +9,7 @@
     "start": "HOSTNAME=127.0.0.1 PORT=${PORT:-6980} node -r dotenv/config .next/standalone/server.js",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "test": "node --test tests/"
+    "test": "node --test \"tests/**/*.test.*\""
   },
   "engines": {
     "node": ">=18"

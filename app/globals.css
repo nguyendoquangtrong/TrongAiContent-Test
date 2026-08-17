@@ -13,30 +13,28 @@
   --brand-700: #9d4d0d;
 
   /* Trung tính ấm */
-  --ink: #211b16;
-  --ink-2: #6d635a;
-  --ink-3: #786d62;
-  --line: #ece3d9;
-  --line-strong: #ded2c5;
+  --ink: #1b1510;
+  --ink-2: #483e35;
+  --ink-3: #5f544a;
+  --line: #e6dcce;
+  --line-strong: #cfbeac;
   --surface: #ffffff;
-  --surface-2: #fbf7f2;
-  --canvas-from: #fff5ea;
-  --canvas-to: #fdfbf8;
+  --surface-2: #f7f2ea;
+  --canvas-from: #fff3e3;
+  --canvas-to: #f9f6f0;
 
-  /* Màu phụ cho icon chip và trạng thái. Cảnh báo dùng đất nung, KHÔNG dùng
-     cam/vàng — trùng accent chính thì user không phân biệt được cảnh báo. */
-  --sage: #3d7052;
-  --sage-bg: #eaf3ec;
-  --plum: #6f4f9b;
-  --plum-bg: #f2edf8;
-  --clay: #b7452c;
-  --clay-bg: #fceee9;
+  /* Màu phụ cho icon chip và trạng thái (đậm để đạt chuẩn tương phản > 4.5:1) */
+  --sage: #165630;
+  --sage-bg: #def0e3;
+  --plum: #482c73;
+  --plum-bg: #ece3f7;
+  --clay: #8e230f;
+  --clay-bg: #fbe3dc;
 
-  /* Nút chính dùng chữ nâu đậm, không dùng trắng: trên nền cam nhạt chữ trắng
-     chỉ đạt 2.4:1. Muốn giữ chữ trắng thì phải đẩy cam xuống nâu sẫm, mất tông. */
-  --btn-from: #f2953f;
-  --btn-to: #e2791e;
-  --btn-ink: #2b1a0a;
+  /* Nút chính dùng chữ trắng nổi bật, tương phản sắc nét */
+  --btn-from: #f08c35;
+  --btn-to: #d96914;
+  --btn-ink: #ffffff;
 
   /* Chữ */
   --font-display: "Bricolage Grotesque", Georgia, serif;
@@ -59,7 +57,7 @@
   --ease: cubic-bezier(.32, .72, 0, 1);
 }
 
-/* Dark mode: chỉ đảo lại giá trị token, không sửa selector ở nơi khác. */
+/* Dark mode: chỉ đảo lại giá trị token */
 :root[data-theme="dark"] {
   --brand-050: #33210f;
   --brand-100: #4a2f14;
@@ -69,27 +67,27 @@
   --brand-600: #f7a154;
   --brand-700: #fbbd82;
 
-  --ink: #f5efe8;
-  --ink-2: #b3a89d;
-  --ink-3: #948a80;
-  --line: #322a23;
-  --line-strong: #453a31;
-  --surface: #1d1814;
-  --surface-2: #241e19;
-  --canvas-from: #17120f;
-  --canvas-to: #1b1613;
+  --ink: #f8f4ee;
+  --ink-2: #cfc5bb;
+  --ink-3: #aba095;
+  --line: #383028;
+  --line-strong: #4e4339;
+  --surface: #1e1915;
+  --surface-2: #28211b;
+  --canvas-from: #15100d;
+  --canvas-to: #181310;
 
-  /* Màu phụ phải sáng hơn hẳn bản sáng, nếu giữ nguyên thì badge chìm vào nền. */
-  --sage: #7cc396;
-  --sage-bg: #1d2b22;
-  --plum: #b89ce0;
-  --plum-bg: #251d33;
-  --clay: #ef8a6e;
-  --clay-bg: #331e18;
+  /* Màu phụ sáng rõ trong dark mode */
+  --sage: #7fe0a2;
+  --sage-bg: #14301e;
+  --plum: #caaaf8;
+  --plum-bg: #2d1e42;
+  --clay: #ff9980;
+  --clay-bg: #401812;
 
-  --btn-from: #f7a154;
-  --btn-to: #e2791e;
-  --btn-ink: #2b1a0a;
+  --btn-from: #f08c35;
+  --btn-to: #d96914;
+  --btn-ink: #ffffff;
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
   --shadow-md: 0 4px 14px rgba(0, 0, 0, .45);
@@ -139,4 +137,19 @@ svg { display: block; flex: none; }
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
   }
+}
+
+/* Đảm bảo chữ trong ô soạn thảo (textarea) luôn là màu trắng nổi bật, sắc nét */
+textarea,
+.textarea {
+  font-family: inherit;
+  color: #ffffff !important;
+  background-color: #1e1915 !important;
+  border: 1px solid var(--line-strong) !important;
+  caret-color: #ffffff;
+}
+
+textarea::placeholder,
+.textarea::placeholder {
+  color: #a89f94 !important;
 }

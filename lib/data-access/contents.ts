@@ -60,6 +60,13 @@ export function contentsRepo(db: KetNoiDrizzle, workspaceId: string) {
       return dong ?? null;
     },
 
+    async xoa(id: string) {
+      await db
+        .delete(contents)
+        .where(and(eq(contents.workspaceId, workspaceId), eq(contents.id, id)));
+      return true;
+    },
+
     async layTheoId(id: string) {
       const [dong] = await db
         .select()

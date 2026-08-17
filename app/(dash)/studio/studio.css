@@ -1,9 +1,161 @@
-/* Studio (Phase 9) — dung lai lop cua brand.css, chi them phan rieng. */
+/* Studio (Phase 9) — Dung chung token cua app/globals.css va brand.css */
 
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.panel--warning {
+  background: var(--clay-bg);
+  border-color: var(--clay);
+}
+
+/* Nut bam Studio */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 15px;
+  border-radius: var(--r-md);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform .12s var(--ease), box-shadow .15s var(--ease), background .15s var(--ease), border-color .15s var(--ease);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--sm {
+  padding: 6px 12px;
+  font-size: 12.5px;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--btn-from), var(--btn-to));
+  color: #ffffff !important;
+  font-weight: 700;
+  border: 1px solid rgba(160, 60, 10, .35);
+  box-shadow: var(--shadow-brand);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+.btn--primary:hover {
+  background: linear-gradient(135deg, #f79a49, #e0741e);
+  color: #ffffff !important;
+  box-shadow: 0 8px 22px rgba(198, 99, 19, .38);
+}
+
+.btn--primary svg {
+  color: #ffffff !important;
+}
+
+.btn--secondary {
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--secondary:hover {
+  background: var(--surface-2);
+  border-color: var(--brand-400);
+  color: var(--brand-700);
+}
+
+.btn--ghost {
+  border-color: var(--line-strong);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.btn--ghost:hover {
+  background: var(--surface-2);
+}
+
+/* Thanh Tab chuyen dung cho Studio (Bien soan, Hang loat, Chuoi bai) */
+.studio-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 2px solid var(--line);
+  margin-bottom: 18px;
+}
+
+.studio-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink-2);
+  background: transparent;
+  border: 1px solid transparent;
+  border-bottom: none;
+  margin-bottom: -2px;
+  cursor: pointer;
+  border-radius: var(--r-sm) var(--r-sm) 0 0;
+  transition: all 0.15s var(--ease);
+}
+
+.studio-tab:hover {
+  color: var(--ink);
+  background: var(--surface-2);
+}
+
+.studio-tab[data-active="true"] {
+  color: var(--brand-700);
+  background: var(--surface);
+  border-color: var(--line-strong) var(--line-strong) var(--surface);
+  border-top: 2px solid var(--brand-500);
+  font-weight: 700;
+}
+
+/* Nhanh chon be mat & so luong */
 .chon-be-mat {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+.chip-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--surface-2);
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+}
+
+.chip-note--sage {
+  background: var(--sage-bg);
+  color: var(--sage);
+  border-color: transparent;
+}
+
+.chip-note--clay {
+  background: var(--clay-bg);
+  color: var(--clay);
+  border-color: transparent;
+}
+
+.chip-note--brand {
+  background: var(--brand-050);
+  color: var(--brand-700);
+  border-color: var(--brand-200);
 }
 
 /* O soan bai: van ban + dong do dai + canh bao tu ngu. */
@@ -15,8 +167,16 @@
 
 .soan__o {
   width: 100%;
-  min-height: 220px;
+  min-height: 240px;
   resize: vertical;
+  color: #ffffff !important;
+  background-color: #1e1915 !important;
+  border: 1px solid var(--line-strong) !important;
+  caret-color: #ffffff;
+}
+
+.soan__o::placeholder {
+  color: #a89f94 !important;
 }
 
 .soan__do {
@@ -26,9 +186,10 @@
   font-size: 13px;
 }
 
-/* Ba trang thai do dai phai phan biet duoc NGAY, khong phai doc chu moi hieu. */
+/* Ba trang thai do dai */
 .soan__dem--dat {
   color: var(--sage);
+  font-weight: 600;
 }
 
 .soan__dem--dai,
@@ -90,7 +251,7 @@
   gap: 2px;
 }
 
-/* Bon cot so giong — bay bon ban canh nhau de doc, khong phai de sua. */
+/* Bon cot so giong — bay bon ban canh nhau de doc. */
 .bon-cot {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -98,8 +259,6 @@
   margin-bottom: 16px;
 }
 
-/* Duoi 1200px bon cot thanh hai; duoi 760px thanh mot. Doc bai 250 tu trong mot
-   cot rong 200px la khong doc duoc. */
 @media (max-width: 1200px) {
   .bon-cot {
     grid-template-columns: repeat(2, 1fr);
@@ -116,10 +275,17 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 14px;
+  padding: 16px;
   border: 1px solid var(--line);
   border-radius: var(--r-md);
   background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s var(--ease), box-shadow 0.15s var(--ease);
+}
+
+.cot-be-mat:hover {
+  border-color: var(--brand-400);
+  box-shadow: var(--shadow-md);
 }
 
 .cot-be-mat__dau {
@@ -132,17 +298,20 @@
 
 .cot-be-mat__ten {
   font-weight: 600;
+  color: var(--ink);
 }
 
 .cot-be-mat__tieu-de {
   font-weight: 600;
   font-size: 14px;
+  color: var(--ink);
 }
 
 .cot-be-mat__than {
   font-size: 14px;
   line-height: 1.6;
   white-space: pre-wrap;
+  color: var(--ink);
 }
 
 .cot-be-mat__the {
@@ -153,5 +322,6 @@
 /* Bai trong mot chuoi: thut vao de nhin ra chung mot mach. */
 .muc--trong-chuoi {
   margin-left: 18px;
-  border-left: 2px solid var(--sage);
+  border-left: 3px solid var(--sage);
+  padding-left: 14px;
 }
